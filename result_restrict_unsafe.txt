@@ -1,0 +1,15 @@
+ g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -funsafe-math-optimizations -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+m=5120, n=5120, p=5120
+           matmul_d (asm) took 65337.36 ms
+                mat_mult5 took 69604.27 ms
+                mat_mult4 took 69082.46 ms
+                mat_mult3 took 62669.37 ms
+                mat_mult2 took 54476.47 ms
+                 mat_mult took 310896.34 ms
+           matmul_f (asm) took 35635.76 ms
+              mat_mult5_f took 37629.49 ms
+              mat_mult4_f took 51805.98 ms
+              mat_mult3_f took 34256.88 ms
+              mat_mult2_f took 27182.71 ms
+               mat_mult_f took 140176.49 ms
+

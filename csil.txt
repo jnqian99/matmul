@@ -1,0 +1,166 @@
+g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+m=512, n=512, p=512
+           matmul_d (asm) took   42.21 ms
+                mat_mult5 took   36.66 ms
+                mat_mult4 took   42.13 ms
+                mat_mult3 took   34.91 ms
+                mat_mult2 took  109.63 ms
+                 mat_mult took   60.25 ms
+           matmul_f (asm) took   21.84 ms
+              mat_mult5_f took   21.63 ms
+              mat_mult4_f took   38.86 ms
+              mat_mult3_f took   22.71 ms
+              mat_mult2_f took  115.31 ms
+               mat_mult_f took  170.05 ms
+
+g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+m=1536, n=1536, p=1536
+           matmul_d (asm) took 1605.28 ms
+                mat_mult5 took 1558.21 ms
+                mat_mult4 took 1670.07 ms
+                mat_mult3 took 1501.63 ms
+                mat_mult2 took 3404.12 ms
+                 mat_mult took 2931.76 ms
+           matmul_f (asm) took  655.22 ms
+              mat_mult5_f took  591.42 ms
+              mat_mult4_f took 1057.80 ms
+              mat_mult3_f took  676.02 ms
+              mat_mult2_f took 3188.63 ms
+               mat_mult_f took 6325.91 ms
+
+g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+m=2560, n=2560, p=2560
+           matmul_d (asm) took 7877.15 ms
+                mat_mult5 took 8745.56 ms
+                mat_mult4 took 8333.21 ms
+                mat_mult3 took 7546.43 ms
+                mat_mult2 took 15971.75 ms
+                 mat_mult took 21238.00 ms
+           matmul_f (asm) took 4215.54 ms
+              mat_mult5_f took 4665.55 ms
+              mat_mult4_f took 5986.53 ms
+              mat_mult3_f took 4351.42 ms
+              mat_mult2_f took 15548.22 ms
+               mat_mult_f took 56656.72 ms
+
+g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+m=3840, n=3840, p=3840
+           matmul_d (asm) took 26824.87 ms
+
+                mat_mult5 took 29433.77 ms
+                mat_mult4 took 27739.18 ms
+                mat_mult3 took 25754.62 ms
+                mat_mult2 took 54275.30 ms
+                 mat_mult took 76579.46 ms
+           matmul_f (asm) took 14404.01 ms
+              mat_mult5_f took 15368.48 ms
+              mat_mult4_f took 20444.41 ms
+              mat_mult3_f took 14958.01 ms
+              mat_mult2_f took 53479.39 ms
+               mat_mult_f took 205137.86 ms
+
+g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+m=5120, n=5120, p=5120
+           matmul_d (asm) took 66259.87 ms
+                mat_mult5 took 70949.35 ms
+                mat_mult4 took 69058.17 ms
+                mat_mult3 took 63685.99 ms
+                mat_mult2 took 129445.93 ms
+                 mat_mult took 329199.10 ms
+           matmul_f (asm) took 36901.45 ms
+              mat_mult5_f took 41402.27 ms
+              mat_mult4_f took 51793.37 ms
+              mat_mult3_f took 37114.62 ms
+              mat_mult2_f took 125287.57 ms
+               mat_mult_f took 851267.30 ms
+
+g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+m=6144, n=6144, p=6144
+           matmul_d (asm) took 112468.69 ms
+                mat_mult5 took 120250.70 ms
+                mat_mult4 took 118973.04 ms
+                mat_mult3 took 108500.23 ms
+                mat_mult2 took 223172.95 ms
+                 mat_mult took 593961.38 ms
+           matmul_f (asm) took 60854.75 ms
+              mat_mult5_f took 64575.01 ms
+              mat_mult4_f took 89312.44 ms
+              mat_mult3_f took 62818.90 ms
+              mat_mult2_f took 223283.91 ms
+               mat_mult_f took 1504878.86 ms
+
+m=7168, n=7168, p=7168
+           matmul_d (asm) took 178990.80 ms
+                mat_mult5 took 192522.42 ms
+                mat_mult4 took 185936.52 ms
+                mat_mult3 took 174504.34 ms
+                mat_mult2 took 354593.40 ms
+                 mat_mult took 951626.41 ms
+           matmul_f (asm) took 97581.70 ms
+              mat_mult5_f took 103790.68 ms
+              mat_mult4_f took 140433.45 ms
+              mat_mult3_f took 104277.88 ms
+              mat_mult2_f took 360496.83 ms
+                mat_mult_f took 2567716.74 ms
+
+m=8192, n=8192, p=8192
+           matmul_d (asm) took 264841.29 ms
+                mat_mult5 took 284359.89 ms
+                mat_mult4 took 281169.87 ms
+                mat_mult3 took 255813.70 ms
+                mat_mult2 took 533906.85 ms
+                  mat_mult took 1461649.08 ms
+           matmul_f (asm) took 150874.07 ms
+              mat_mult5_f took 156861.43 ms
+              mat_mult4_f took 213977.56 ms
+              mat_mult3_f took 150726.09 ms
+              mat_mult2_f took 530546.73 ms
+               mat_mult_f took 3983756.44 ms
+
+m=9216, n=9216, p=9216
+           matmul_d (asm) took 376391.21 ms
+                mat_mult5 took 406615.66 ms
+                mat_mult4 took 397627.35 ms
+                mat_mult3 took 364055.59 ms
+                mat_mult2 took 747552.58 ms
+                  mat_mult took 1954602.66 ms
+           matmul_f (asm) took 207115.96 ms
+              mat_mult5_f took 220421.87 ms
+              mat_mult4_f took 296556.93 ms
+              mat_mult3_f took 214746.72 ms
+               mat_mult2_f took 736297.51 ms
+                 mat_mult_f took 5516137.46 ms
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -funsafe-math-optimizations -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+m=5120, n=5120, p=5120
+           matmul_d (asm) took 65955.89 ms
+                mat_mult5 took 71212.24 ms
+                mat_mult4 took 69534.35 ms
+                mat_mult3 took 62666.45 ms
+                mat_mult2 took 54780.76 ms
+                 mat_mult took 329656.62 ms
+           matmul_f (asm) took 35308.39 ms
+              mat_mult5_f took 37504.39 ms
+              mat_mult4_f took 51948.22 ms
+              mat_mult3_f took 36635.20 ms
+              mat_mult2_f took 130555.93 ms
+               mat_mult_f took 859467.63 ms
+
+g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -funsafe-math-optimizations -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+m=9216, n=9216, p=9216
+           matmul_d (asm) took 386367.55 ms
+                mat_mult5 took 412614.71 ms
+                mat_mult4 took 411622.68 ms
+                mat_mult3 took 373469.09 ms
+                mat_mult2 took 317240.97 ms
+                 mat_mult took 2020502.25 ms
+           matmul_f (asm) took 206926.43 ms
+              mat_mult5_f took 219268.66 ms
+              mat_mult4_f took 301056.38 ms
+              mat_mult3_f took 215154.69 ms
+              mat_mult2_f took 741452.64 ms
+                mat_mult_f took 5476789.65 ms
+

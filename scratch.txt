@@ -1,0 +1,90 @@
+https://rosettacode.org/wiki/Sorting_algorithms/Heapsort#C
+
+m=480, n=480, p=480
+                mat_mult3 took   23.59 ms
+                mat_mult2 took   79.19 ms
+                 mat_mult took   34.84 ms
+              mat_mult3_f took   14.46 ms
+              mat_mult2_f took   78.51 ms
+               mat_mult_f took   17.42 ms
+
+m=1600, n=1600, p=1600
+                mat_mult3 took 1856.60 ms
+                mat_mult2 took 3327.36 ms
+                 mat_mult took 4606.44 ms
+              mat_mult3_f took 1059.88 ms
+              mat_mult2_f took 3116.74 ms
+               mat_mult_f took 1545.29 ms               
+
+m=4800, n=4800, p=4800
+                mat_mult3 took 48879.24 ms
+                mat_mult2 took 90093.89 ms
+                 mat_mult took 242641.16 ms
+              mat_mult3_f took 28124.16 ms
+              mat_mult2_f took 84917.11 ms
+               mat_mult_f took 104453.25 ms
+
+m=2560, n=2560, p=2560
+                mat_mult5 took 8133.82 ms
+                mat_mult4 took 6527.28 ms
+                mat_mult3 took 7623.92 ms
+                mat_mult2 took 13832.60 ms
+                 mat_mult took 46402.98 ms
+              mat_mult5_f took 4600.94 ms
+              mat_mult4_f took 3414.48 ms
+              mat_mult3_f took 4455.96 ms
+              mat_mult2_f took 12881.45 ms
+               mat_mult_f took 15549.50 ms
+
+m=5120, n=5120, p=5120
+                mat_mult5 took 62744.96 ms
+                mat_mult4 took 50655.43 ms
+                mat_mult3 took 59205.91 ms
+                mat_mult2 took 109365.15 ms
+                 mat_mult took 370806.79 ms
+              mat_mult5_f took 34838.09 ms
+              mat_mult4_f took 25906.39 ms
+              mat_mult3_f took 33694.63 ms
+              mat_mult2_f took 103275.34 ms
+               mat_mult_f took 188733.66 ms
+               
+gcc  -Wall -Wpedantic -std=c17 -march=haswell -O3 hs1.c -o a1.out && ./a1.out
+
+gcc  -Wall -Wpedantic -std=c17 -march=haswell -O3 hs2.c -o a2.out && ./a2.out
+
+gcc  -Wall -Wpedantic -std=c17 -march=haswell hs2.c -o a2.out && ./a2.out
+
+gcc  -Wall -Wpedantic -std=c17 -march=haswell -O3 matmul1.c -o a1.out && ./a1.out
+
+gcc  -Wall -Wpedantic -std=c17 -march=haswell -O3 matmul2.c -o a2.out && ./a2.out
+
+gcc  -Wall -Wpedantic -std=c17 -march=haswell -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+
+gcc -Wall -Wpedantic -std=c17 -march=haswell -c matmul2.c && as --warn -g matmul.S -o matmul.o && gcc matmul2.o matmul.o -o a1.out && ./a1.out
+
+g++  -Wall -Wpedantic -march=haswell -O3 matmul2.c -o a2.out && ./a2.out
+
+g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+
+g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -funsafe-math-optimizations -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+
+g++ -I /usr/include/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -funsafe-math-optimizations -O3 matmul2.c matmul.S -o a2.out && ./a2.out
+
+
+g++ -I /usr/include/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -O3 -c matmul2.c \
+&& as --warn -g matmul.S -o matmul.o \
+&& g++ matmul.o matmul2.o -o a2.out && ./a2.out
+
+g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -funsafe-math-optimizations -O1 -g matmul2.c matmul.S -o a2.out
+perf stat -e branch-misses,branches,br_inst_retired.not_taken ./a2.out
+perf record -e branch-misses:pp,branches:pp,br_inst_retired.not_taken:pp ./a2.out
+perf report
+perf annotate
+
+
+g++ -I ~/sfuhome/vectorclass/ -Wall -Wpedantic -std=c++17 -march=haswell -funsafe-math-optimizations -O3 matmul2.c matmul.S -o a2.out
+perf stat -e branch-misses,branches,L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads ./a2.out
+
+rm cachegrind.out.*
+valgrind --tool=cachegrind ./a2.out
+cg_annotate cachegrind.out.*

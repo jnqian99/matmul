@@ -74,12 +74,12 @@ I used perf to collect branch-misses, branches, L1-dcache-load-misses,
 L1-dcache-loads, LLC-load-misses, LLC-loads data to evaluate the
 performance of the functions as shown in the tables below:
 
-![](./mdimages/media/image1.emf)
+![](./media/image1.png)
 
 Table 1. Running speed (ms) for different types of implementations for
 matrix multiplication.
 
-![](./mdimages/media/image2.emf)
+![](./media/image2.png)
 
 Table 2. Output from perf utility for branch-misses, branches,
 L1-dcache-load-misses, L1-dcache-loads, LLC-load-misses, LLC-loads
